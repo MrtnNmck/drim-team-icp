@@ -1,0 +1,11 @@
+footer vyzerá ako tlaèidlo
+v rekapitulácií by mali byt vyplnené údaje iba ako text
+odsadi body v inštrukciách
+odsadi odstavec
+treba prida odráky v "Èo budete potrebova"
+velkosti písma na home page, ve¾kı rozdiel medzi nadpismy a textom
+vyfarbovanie v progress bare
+v otáznikoch by mala byt len nápoveda ako vyplni danı údaj
+zarovnanie vo formulári
+vizuálne oznaèit èo u je vyplnené/ kde je vyplnené u všetko
+máme to pekné :)
