@@ -1,11 +1,23 @@
-footer vyzerá ako tlaèidlo
-v rekapitulácií by mali byt vyplnené údaje iba ako text
-odsadi body v inštrukciách
-odsadi odstavec
-treba prida odráky v "Èo budete potrebova"
-velkosti písma na home page, ve¾kı rozdiel medzi nadpismy a textom
-vyfarbovanie v progress bare
-v otáznikoch by mala byt len nápoveda ako vyplni danı údaj
-zarovnanie vo formulári
-vizuálne oznaèit èo u je vyplnené/ kde je vyplnené u všetko
-máme to pekné :)
+-pätièka vyzerá ako tlaèidlo
+Pätièka vyzerala ako tlaèidlo, ale len v dokumentácií lebo v pdf bol okolo snímky obrazovky biely okraj. Na stránke je pätièka po celej šírke obrazovky a preto nepôsobí ako tlaèidlo.
+
+-v rekapitulácií by mali byt vyplnené údaje iba ako text
+Pripomienku berieme na vedomie a aj sme to chceli spravi ako text, ale Pingendo nám to neumonilo spravi tak, aby to vyzeralo dobre a zdalo sa nám vhodnejšie urobi to v mockupe takto a potom prerobi a vo finálnej stránke.
+
+-odsadi body v inštrukciách a odseky na úvodnej stránke
+Berieme na vedomie. Body v inštrukciách odsadíme kvôli spreh¾adneniu textu. Takisto pridáme odsadenie na zaèiatky odsekov tak, aby to vyzeralo èo najlepšie.
+
+-treba prida odráky v "Èo budete potrebova"
+V èasti "Èo budete potrebova" na úvodnej stránke pridáme odráky, pretoe teraz kvôli dåke niektorıch bodov nie je jasné ko¾ko ich tam je a èi na danom riadku zaèína ïalší alebo je to ešte len dokonèenie predchádzajúceho riadku.
+
+-ve¾kosti písma na home page, ve¾kı rozdiel medzi nadpismy a textom
+Ve¾ké rozdiely vo ve¾kosti písma medzi nadpismi a textom na domovskej stránke pôsobili rušivo. Vyskúšame iné pomery ve¾kostí, aby sme tento problém odstránili.
+
+-vyfarbovanie v progress bare
+Dostali sme návrh, e by bolo mono dobré farebne oznaèi v progress bare, èasti ktoré u sú úplne vyplnené, ktoré sú èiastoène a ktoré nie sú vôbec. Pripomienku zváime a ak sa úkae ako uitoèná zapracujeme do stránky.
+
+-v otáznikoch by mala byt len nápoveda ako vyplni danı údaj
+Pri prezentácií bolo spomenuté, e v otáznikoch pri poliach vo formulári bude napísané, preèo sa ten údaj vyaduje, ale mala by tam by iba nápoveda ako údaj vyplni a nie dôvod potreby vypåòa ho. S tımto súhlasíme, dôvody budú struène popísané aj v úvode kadého formulára.
+
+-zarovnanie vo formulári
+V mockupe sme vo formulári mali zlé zarovnanie (èas formuláru mala zarovnanie do¾ava a èas doprava). Bola to len chyba, ktorú sme si nevšimli predtım, nebolo to tak úmyselne. Vo finálnej verzi bude všetko zarovnané rovnako.
