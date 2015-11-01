@@ -34,6 +34,7 @@ $( document ).ready(function() {
         return counter;
     };
 
+    // =============== CUSTOM RULES FOR VALIDATION ===============
     $.validator.addMethod("emptyOrMaxFive", function(value, element) {
         return this.optional(element) || value.length <= 5;
     }, "Vypĺňané pole musí byť prázdne alebo maximálne 5 znakov.");

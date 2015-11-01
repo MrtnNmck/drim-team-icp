@@ -39,14 +39,35 @@ $(document).ready(function() {
         var inputs = document.getElementsByTagName("input");
         var inputsList = Array.prototype.slice.call(inputs);
 
+        var radioDiv = null;
+        var inputCounter = 0;
+        var validInputCounter = 0;
+
         inputsList.forEach(function(element) {
-            if (element.value.length > 0 && $(element).is(":visible") && $(element).valid()) {
-                console.log(element.name);
-                validationValue += 100 / inputsCount;
+            if ($(element).is(":radio") && $(element).is(":visible")) {
+                if (!($(element).closest("div").is(radioDiv))) {
+                    radioDiv = $(element).closest("div");
+                    inputCounter++;
+                    validInputCounter++;
+                } else {
+                    return;
+                }
+            } else if ($(element).is(":visible")) {
+                if (element.value.length > 0 && $(element).valid()) {
+                    inputCounter++;
+                    validInputCounter++;
+                } else {
+                    inputCounter++;
+                }
             }
         });
 
+        validationValue = Math.round(100 / inputCounter * validInputCounter);
         alert(Math.round(validationValue) + " %");
+
+        if ($("#" + e.currentTarget.dataset.submit).valid()) {
+            window.location.href = (e.currentTarget.href);
+        }
     });
 
 });
