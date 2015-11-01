@@ -1,6 +1,8 @@
 var inputsCount = 0;
 
 $( document ).ready(function() {
+    // Characters with accent
+    var accentedChars = "áäčéěďíĺľňôŕřšťúýž";
     // VALIDATION OF INPUTS
     inputsCount = getVisibleInputsCount();
 
@@ -37,7 +39,8 @@ $( document ).ready(function() {
     }, "Vypĺňané pole musí byť prázdne alebo maximálne 5 znakov.");
 
     $.validator.addMethod("emptyOrOnlyLetters", function(value, element) {
-        return this.optional(element) || value.length == 0 || /^[A-Za-z\s]+$/.test(value);
+        var regex = new RegExp("^[a-zA-Z" + accentedChars + "]+$");
+        return this.optional(element) || value.length == 0 || regex.test(value);
     }, "Vypĺňané pole môže obsahovať iba písmena.");
 
     $.validator.addMethod("emptyOrRodneCislo", function(value, element) {
@@ -45,7 +48,8 @@ $( document ).ready(function() {
     }, "Vypĺňané pole musí byť v tvare xxxxxx / xxxx.");
 
     $.validator.addMethod("emptyOrOnlyLettersAndNumbers", function(value, element) {
-        return this.optional(element) || value.length == 0 || /^[A-Za-z\d]+$/.test(value);
+        var regex = new RegExp("^[A-Za-z" + accentedChars + "\\d]+$");
+        return this.optional(element) || value.length == 0 || regex.test(value);
     }, "Vypĺňané pole môže obsahovať iba písmena a číslice.");
 
     $.validator.addMethod("emptyOrPhoneNumber", function(value, element) {
