@@ -3,36 +3,6 @@ var inputsCount = 0;
 $( document ).ready(function() {
     // Characters with accent
     var accentedChars = "áäčéěďíĺľňôŕřšťúýž";
-    // VALIDATION OF INPUTS
-    inputsCount = getVisibleInputsCount();
-
-    // Gets number of visible inputs
-    function getVisibleInputsCount() {
-        var counter = 0;
-
-        var inputs = document.getElementsByTagName("input");
-        var inputsList = Array.prototype.slice.call(inputs);
-
-        var radioDiv = null;
-
-        inputsList.forEach(function(element) {
-            if ($(element).is(":visible")) {
-                /*if ($(element).is(":radio")) {
-                    //alert($(element).closest("div"));
-                    if ( !$(element).closest("div").is(radioDiv) ) {
-                        radioDiv = $(element).closest("div");
-                        counter++;
-                    }
-                    return;
-                }*/
-
-                counter++;
-            }
-        });
-
-        console.log("Visible inputs: " + counter);
-        return counter;
-    };
 
     // =============== CUSTOM RULES FOR VALIDATION ===============
     $.validator.addMethod("emptyOrMaxFive", function(value, element) {
