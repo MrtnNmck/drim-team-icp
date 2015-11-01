@@ -14,7 +14,7 @@ function getCookie(name) {
     var value = null;
 
     document.cookie.split(';').forEach(function(cookiePart) {
-        if (value != null) {
+        if (value == null) {
             while (cookiePart.charAt(0) == ' ') {
                 cookiePart = cookiePart.substring(1);
             }
