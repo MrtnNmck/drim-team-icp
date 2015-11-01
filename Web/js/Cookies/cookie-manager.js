@@ -11,18 +11,21 @@ function createCookie(name, value, expirationDays) {
 // Gets value of Cookie with specified name
 function getCookie(name) {
     var cookieName = name + "=";
+    var value = null;
 
     document.cookie.split(';').forEach(function(cookiePart) {
-        while (cookiePart.charAt(0) == ' ') {
-            cookiePart = cookiePart.substring(1);
-        }
+        if (value != null) {
+            while (cookiePart.charAt(0) == ' ') {
+                cookiePart = cookiePart.substring(1);
+            }
 
-        if (cookiePart.indexOf(cookieName) == 0) {
-            return cookiePart.substring(cookieName.length, cookiePart.length);
+            if (cookiePart.indexOf(cookieName) == 0) {
+                value = cookiePart.substring(cookieName.length, cookiePart.length);
+            }
         }
     });
 
-    return null;
+    return value;
 }
 
 // Checks if Cookie with specified name is set

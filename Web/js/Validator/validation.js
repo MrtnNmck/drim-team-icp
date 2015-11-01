@@ -53,3 +53,7 @@ $( document ).ready(function() {
         }
     });
 });
+
+function getCurrentFileName() {
+    return document.location.pathname.match(/[^\/]+$/)[0];
+};

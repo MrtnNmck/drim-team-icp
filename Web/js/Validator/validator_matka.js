@@ -65,7 +65,7 @@ $(document).ready(function() {
         validationValue = Math.round(100 / inputCounter * validInputCounter);
         //alert(Math.round(validationValue) + " %");
 
-        createCookie("progress-bar." + e.currentTarget.getAttribute("href"), validationValue, 1);
+        createCookie("progress-bar." + getCurrentFileName(), validationValue, 1);
 
         if ($("#" + e.currentTarget.dataset.submit).valid()) {
             window.location.href = (e.currentTarget.href);
