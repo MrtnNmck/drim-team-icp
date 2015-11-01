@@ -33,7 +33,7 @@ $(document).ready(function() {
         var aInputsList = Array.prototype.slice.call(aInputs);
 
         aInputsList.forEach(function(progressBarPart) {
-            var isCookieSet = checkCookie("progress-bar." + progressBarPart.href);
+            var isCookieSet = checkCookie("progress-bar." + progressBarPart.getAttribute("href"));
             var value = isCookieSet ? getCookie("progress-bar." + progressBarPart.href) : 0;
             var badge = createProgressBarBadge(getProgressBarBadgeColor(value), value);
 
