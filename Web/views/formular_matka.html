@@ -4,6 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="../js/jQuery/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="../js/Bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/Validator/jquery.validate.js"></script>
+        <script type="text/javascript" src="../js/Validator/validation.js"></script>
+        <script type="text/javascript" src="../js/Validator/validator_matka.js"></script>
         <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="../css/layout_css.css" rel="stylesheet" type="text/css">
         <title>Matka</title>
@@ -87,13 +90,13 @@
                                             viac detí, alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá</i>
                                         </p>
                                         <hr>
-                                        <form class="form-horizontal" role="form">
+                                        <form class="form-horizontal" role="form" id="form-matka-info">
 											<div class="form-group">
                                                 <div class="col-lg-2">
                                                     <label class="control-label">Titul</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" value="" placeholder="Titul">
+                                                    <input type="text" class="form-control" value="" placeholder="Titul" name="titul">
                                                 </div>
                                             </div>
                                             <div class="form-group required">
@@ -101,7 +104,7 @@
                                                     <label class="control-label">Meno</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" value="" placeholder="Meno">
+                                                    <input type="text" class="form-control" value="" placeholder="Meno" id="meno" name="meno">
                                                 </div>
                                             </div>
                                             <div class="form-group required">
@@ -109,7 +112,7 @@
                                                     <label class="control-label">Priezvisko</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" placeholder="Priezvisko">
+                                                    <input type="text" class="form-control" placeholder="Priezvisko" id="priezvisko" name="priezvisko">
                                                 </div>
                                             </div>
                                             <div class="form-group required">
@@ -117,7 +120,7 @@
                                                     <label class="control-label">Rodinný stav</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <div class="radio">
+                                                    <div class="radio" name="xx">
                                                         <label class="radio-inline">
                                                         <input type="radio" checked="checked">Slobodná</label>
                                                         <label class="radio-inline">
@@ -131,7 +134,7 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Rodné číslo">
+                                                        <input type="text" class="form-control" placeholder="Rodné číslo" id="rodneCislo" name="rodneCislo">
                                                         <span class="input-group-addon">
                                                         <i class="fa fa-question fa-lg"></i>
                                                         </span>
@@ -144,7 +147,7 @@
                                                 </div>
                                                 <div class="col-lg-9">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Číslo občianskeho preukazu">
+                                                        <input type="text" class="form-control" placeholder="Číslo občianskeho preukazu" id="cisloObcPreukaz" name="cisloObcPreukaz">
                                                         <span class="input-group-addon">
                                                         <i class="fa fa-question fa-lg"></i>
                                                         </span>
@@ -156,7 +159,7 @@
 													<label for="name" class="control-label label-left">Štátna príslušnosť</label>
 												</div>
 												<div class="col-lg-9">
-													<input type="text" class="form-control" placeholder="Štátna príslušnosť">
+													<input type="text" class="form-control" placeholder="Štátna príslušnosť" id="statnaPrislusnost" name="statnaPrislusnost">
 												</div>
 											</div>
 
@@ -165,7 +168,7 @@
                                                     <label class="control-label">Telefón</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="tel" class="form-control" placeholder="Telefón">
+                                                    <input type="tel" class="form-control" placeholder="Telefón" id="telefon" name="telefon">
                                                 </div>
                                             </div>
 											<div class="form-group">
@@ -173,7 +176,7 @@
                                                     <label class="control-label">Email</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="email" class="form-control" placeholder="Email">
+                                                    <input type="text" class="form-control" placeholder="Email" id="email" name="email">
                                                 </div>
                                             </div>
 											<hr>
@@ -183,7 +186,7 @@
                                                     <label class="control-label">Ulica</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" placeholder="Ulica">
+                                                    <input type="text" class="form-control" placeholder="Ulica" id="ulica" name="ulica">
                                                 </div>
                                             </div>
 											<div class="form-group required">
@@ -191,7 +194,7 @@
                                                     <label class="control-label">Mesto</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" placeholder="Mesto">
+                                                    <input type="text" class="form-control" placeholder="Mesto" id="mesto" name="mesto">
                                                 </div>
                                             </div>
 											<div class="form-group required">
@@ -199,7 +202,7 @@
                                                     <label class="control-label label-left">Číslo domu/bytu</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" placeholder="Číslo domu/bytu">
+                                                    <input type="text" class="form-control" placeholder="Číslo domu/bytu" id="cisloDomu" name="cisloDomu">
                                                 </div>
                                             </div>
 											<div class="form-group required">
@@ -207,7 +210,7 @@
                                                     <label class="control-label">PSČ</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" placeholder="PSČ">
+                                                    <input type="text" class="form-control" placeholder="PSČ" id="psc" name="psc">
                                                 </div>
                                             </div>
                                         </form>
@@ -215,7 +218,7 @@
                                         <br>
                                         <div class="col-md-12">
                                             <a href="index.html" class="btn btn-primary"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></a>
-                                            <a href="formular_otec.html" class="btn btn-primary" style="float:right"><strong>Pokračovať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
+                                            <a href="formular_otec.html" class="btn btn-primary" style="float:right" id="nextButton"><strong>Pokračovať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
                                         </div>
                                     </div>
                                 </div>
