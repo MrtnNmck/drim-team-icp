@@ -1,0 +1,211 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="../js/jQuery/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="../js/Bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/validation.js"></script>
+        <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../css/layout_css.css" rel="stylesheet" type="text/css">
+        <title>Platba</title>
+        <style>
+            p.sansserif {
+				font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body style="font-family: Helvetica">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-11">
+                        <img class="img-responsive" src="..\img\bitmap.png">
+                    </div>
+                    <div class="col-md-1">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"><img src="..\img\slovakia.jpg" width="35px"></a>
+                            <a href="#" class="list-group-item"><img src="..\img\england.jpg" width="35px"></a>
+                            <a href="#" class="list-group-item"><img src="..\img\germany.jpg" width="35px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="lead nav navbar-left navbar-nav">
+                        <li class="active">
+                            <a href="#">Domov</a>
+                        </li>
+                        <li>
+                            <a href="#">Často kladené otázky</a>
+                        </li>
+                        <li class="">
+                            <a href="#">O nás</a>
+                        </li>
+                        <li>
+                            <a href="#">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h2>Postup</h2>
+                                        <div class="list-group">
+                                            <a href="formular_matka.html" class="list-group-item">1. Matka</a>
+                                            <a href="formular_otec.html" class="list-group-item">2. Otec</a>
+                                            <a href="formular_novorodenec.html" class="list-group-item">3. Novorodenec</a>
+                                            <a href="formular_deti.html" class="list-group-item">4. Deti</a>
+                                            <a href="formular_platba.html" class="list-group-item active">5. Platobné informácie</a>
+                                            <a href="rekapitulacia.html" class="list-group-item">7. Rekapitulácia</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h2><p class="sansserif">Údaje o platbe</p></h2>
+                                        <hr>
+                                        <h3><p class="sansserif">Stručné info</p></h3>
+                                        <p>Údaje, ktoré sa chystáte vyplniť sú potrebné pre
+                                            <i>Registračný list do soiálnej poistovne</i>,
+                                            <i>Prihlasovací lístok na trvalý pobyt</i>a
+                                            <i>Žiadosť o príspevok rodičom, ktorým sa súčasne narodili tri deti alebo
+                                            viac detí, alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá</i>
+                                        </p>
+                                        <hr>
+										<form class="form-horizontal" role="form">	
+											<div class="form-group required">
+												<div class="col-lg-2">
+													<label class="control-label label-left">Adresa novorodenca</label>
+												</div>
+												<div class="col-lg-9">
+													<div class="radio">
+														<label class="radio-inline">
+														<input name="paymentType" type="radio" checked="checked" value="homeland">Platba na domáci účet</label>
+														<label class="radio-inline">
+														<input name="paymentType" type="radio" value="foreign">Platba na zahraničný účet</label>
+														<label class="radio-inline">
+														<input name="paymentType" type="radio" value="cash">Vyplatenie v hotovosti na adresu</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group" id="homeland">
+												<div class="col-lg-2">
+													<label class="control-label">IBAN</label>
+												</div>
+												<div class="col-lg-9">
+													<input type="text" class="form-control" placeholder="IBAN">
+												</div>
+											</div>
+											
+											<div id="foreign">
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">Názov banky</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="Názov banky">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">Majiteľ účtu</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="Majiteľ účtu">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">IBAN</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="IBAN">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">SWIFT</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="SWIFT">
+													</div>
+												</div>																				
+											</div>
+											
+											<div id="cash">
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">Ulica</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="Ulica">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">Číslo</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="Číslo">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">Mesto</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="Mesto">
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="col-lg-2">
+														<label class="control-label">PSČ</label>
+													</div>
+													<div class="col-lg-9">
+														<input type="text" class="form-control" placeholder="PSČ">
+													</div>
+												</div>	
+											</div>																												
+											
+                                        </form>
+                                        <hr>
+                                        <br>
+                                        <div class="col-md-12">
+                                            <a href="formular_deti.html" class="btn btn-primary"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></a>
+                                            <a href="rekapitulacia.html" class="btn btn-primary" style="float:right"><strong>Pokračovať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="section section-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <label>Drím tím ® 2015</label>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

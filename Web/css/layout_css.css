@@ -6775,4 +6775,19 @@ body {
 .cover .cover-image.cover-image-fixed {
   background-attachment: fixed;
 }
+
+.form-group.required .control-label:after { 
+   content:"*";
+   color:red;
+}
+
+.label-left { 
+   text-align:left !important
+}
+
+.plus-btn {
+   padding-right: 10px;
+}
+
+
 /* PINGENDO COMMENT DO NOT REMOVE */
