@@ -135,7 +135,7 @@
                             </div>
                             <font size="2"></font>
                         </div>
-                        <a href="formular_matka.html" class="btn btn-lg btn-primary pull-right"><strong>Začať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
+                        <a href="formular_matka.html" class="btn btn-lg btn-primary pull-right" id="beginButton"><strong>Začať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -153,5 +153,16 @@
                 </div>
             </footer>
         </font>
+
+        <script type="text/javascript" src="../js/Cookies/cookie-manager.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#beginButton").click(function() {
+                    deleteAllCookies();
+
+                    return true;
+                });
+            });
+        </script>
     </body>
 </html>
