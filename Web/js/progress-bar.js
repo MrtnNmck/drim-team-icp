@@ -13,10 +13,12 @@ $(document).ready(function() {
     function getProgressBarBadgeColor(value) {
 
         if (value == 100) {
-            return "progress-bar-success";     
-        } else if (value < 100 value >= 25) {
+            return "progress-bar-success";
+        } else if (value < 100 && value >= 75) {
+            return "progress-bar-attention";
+        } else if (value < 75 && value >= 50) {
             return "progress-bar-warning";
-        } else if (value < 25 && value > 0) {
+        } else if (value < 50 && value > 0) {
             return "progress-bar-danger";
         } else {
             return "progress-bar-default";
