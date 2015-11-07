@@ -92,57 +92,60 @@
                                             <i>Registračný list do soiálnej poistovne</i>,
                                             <i>Prihlasovací lístok na trvalý pobyt</i>a
                                             <i>Žiadosť o príspevok rodičom, ktorým sa súčasne narodili tri deti alebo
-                                            viac detí, alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá</i>
+                                            viac detí, alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá.</i><br>
+											Pre pridanie údajov o ďalšom dieťati stlačte tlačidlo <i>plus</i>. Pre odobranie <i>mínus</i>.
                                         </p>
-                                        <hr>
-										<h3><p class="sansserif">Dieťa č. 1</p></h3>
-                                        <form class="form-horizontal" role="form" id="form-deti-info">
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Meno</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Meno" id="meno1" name="meno">
-                                                </div>
-                                            </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Priezvisko</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Priezvisko" id="priezvisko1" name="priezvisko">
-                                                </div>
-                                            </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label label-left">Dátum narodenia</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="input-group">
-                                                        <input type="date" class="form-control" placeholder="Dátum narodenia" id="datumNarodenia1" name="datumNarodenia">
-                                                        <span class="input-group-addon">
-                                                        <i class="fa fa-question fa-lg"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-											<div class="form-group required">
-												<div class="col-lg-3">
-													<label class="control-label label-left">Miesto narodenia</label>
+										
+										<form class="form-horizontal" role="form" id="form-deti-info">
+											<div id="child1">
+												<hr>
+												<h3><p class="sansserif">Dieťa č. 1</p></h3>
+												<div class="form-group required">
+													<div class="col-lg-3">
+														<label class="control-label">Meno</label>
+													</div>
+													<div class="col-lg-8">
+														<input type="text" class="form-control" placeholder="Meno" id="meno1" name="meno">
+													</div>
 												</div>
-												<div class="col-lg-8">
-													<input type="text" class="form-control" placeholder="Miesto narodenia" id="miestoNarodenia1" name="miestoNarodenia">
+												<div class="form-group required">
+													<div class="col-lg-3">
+														<label class="control-label">Priezvisko</label>
+													</div>
+													<div class="col-lg-8">
+														<input type="text" class="form-control" placeholder="Priezvisko" id="priezvisko1" name="priezvisko">
+													</div>
+												</div>
+												<div class="form-group required">
+													<div class="col-lg-3">
+														<label class="control-label label-left">Dátum narodenia</label>
+													</div>
+													<div class="col-lg-8">
+														<div class="input-group">
+															<input type="date" class="form-control" placeholder="Dátum narodenia" id="datumNarodenia1" name="datumNarodenia">
+															<span class="input-group-addon">
+															<i class="fa fa-question fa-lg"></i>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="form-group required">
+													<div class="col-lg-3">
+														<label class="control-label label-left">Miesto narodenia</label>
+													</div>
+													<div class="col-lg-8">
+														<input type="text" class="form-control" placeholder="Miesto narodenia" id="miestoNarodenia1" name="miestoNarodenia">
+													</div>
+												</div>
+												<div class="form-group required">
+													<div class="col-lg-3">
+														<label class="control-label">Rodné číslo</label>
+													</div>
+													<div class="col-lg-8">
+														<input type="text" class="form-control" placeholder="Rodné číslo" id="rodneCislo1" name="rodneCislo">
+													</div>
 												</div>
 											</div>
-											<div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Rodné číslo</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Rodné číslo" id="rodneCislo1" name="rodneCislo">
-                                                </div>
-                                            </div>
-
 
 											<div id="child2">
 												<hr>
@@ -347,7 +350,7 @@
 												</div>
 											</div>
 
-											<input type="hidden" id="childrenCount" value="1"/>
+											<input type="hidden" id="childrenCount" value="0"/>
 											<span id="plus-button" class="fa fa-plus-square fa-2x text-primary plus-btn"></span>
 											<span id="minus-button" class="fa fa-minus-square fa-2x text-primary"></span>
 

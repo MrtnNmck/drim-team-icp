@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $( "#newbornAddress" ).hide();
     $( "#minus-button" ).hide();
+	$( "#child1" ).hide();
     $( "#child2" ).hide();
     $( "#child3" ).hide();
     $( "#child4" ).hide();
@@ -49,7 +50,7 @@ $( document ).ready(function() {
         var id="#child" + childrenCount;
         $( id ).show();
 
-        if(childrenCount > 1)
+        if(childrenCount > 0)
             $("#minus-button").show();
         if(childrenCount == 5)
             $("#plus-button").hide();
@@ -62,7 +63,7 @@ $( document ).ready(function() {
         childrenCount -= 1;
         $( "#childrenCount" ).val(childrenCount);
 
-        if(childrenCount == 1)
+        if(childrenCount == 0)
             $("#minus-button").hide();
         if(childrenCount < 5)
             $("#plus-button").show();
