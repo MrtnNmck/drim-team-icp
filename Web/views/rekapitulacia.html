@@ -1,5 +1,6 @@
 <html>
     <head>
+		<basefont face="Arial, Helvetica, sans-serif">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script>
@@ -10,11 +11,8 @@
         <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="../css/layout_css.css" rel="stylesheet" type="text/css">
         <title>Rekapitulácia</title>
-        <style>
-            h3.sansserif {
-            font-family: Arial, Helvetica, sans-serif;
-            }
-            p.sansserif {
+        <style>           
+            * {
             font-family: Arial, Helvetica, sans-serif;
             }
         </style>
@@ -85,90 +83,334 @@
                             </p>
                         </h2>
                         <br>
-                        <h3 class="sansserif">Osobné údaje - matka
-                            <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
+                        <h3>Osobné údaje - matka
+                            <button id="toggleMotherBtn" class="btn btn-primary" style="float:right"><i id="toggleMotherBtnIcon" class="fa fa-angle-up fa-lg"></i></button>
                         </h3>
+										<form class="form-horizontal" role="form" id="motherFrom">
+											<br>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Titul</label>
+                                                </div>
+                                                <div class="col-lg-9">
+													<p class="form-control-static">Ing.</p>                                                 
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Meno</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Anna</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Priezvisko</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Pokorná</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Rodinný stav</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Vydatá</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Rodné číslo</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">123456/7890</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left label-left">Číslo obč. preukazu</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">EU1234567</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+												<div class="col-lg-2">
+													<label for="name" class="control-label label-left label-left">Štátna príslušnosť</label>
+												</div>
+												<div class="col-lg-9">
+													<p class="form-control-static">Slovenská</p>
+												</div>
+											</div>
+
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Telefón</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">0909 090 909</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Email</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">dajmadole@azet.sk</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Ulica</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Strmá</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Mesto</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Bratislava</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">15</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">PSČ</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">99999</p>
+                                                </div>
+                                            </div>
+                                        </form>
                         <hr>
-                        <h3 class="sansserif">Osobné údaje - otec
-                            <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
+                        <h3>Osobné údaje - otec
+                            <button id="toggleFatherBtn" class="btn btn-primary" style="float:right"><i id="toggleFatherIcon" class="fa fa-angle-up fa-lg"></i></button>
                         </h3>
+										<form class="form-horizontal" role="form" id="fatherFrom">
+											<br>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Titul</label>
+                                                </div>
+                                                <div class="col-lg-9">
+													<p class="form-control-static">Bc.</p>                                                 
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Meno</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Muhamad</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Priezvisko</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Ali</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Rodinný stav</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Ženatý</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Rodné číslo</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">111111/1111</p>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left label-left">Číslo obč. preukazu</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">US1111111</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+												<div class="col-lg-2">
+													<label for="name" class="control-label label-left label-left">Štátna príslušnosť</label>
+												</div>
+												<div class="col-lg-9">
+													<p class="form-control-static">indiánska</p>
+												</div>
+											</div>
+
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Telefón</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">0988 888 888</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Email</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">damtadole@azet.sk</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Ulica</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Víťazná</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Mesto</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Sliač</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">1</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">PSČ</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">901 01</p>
+                                                </div>
+                                            </div>
+                                        </form>
                         <hr>
-                        <h3 class="sansserif">Údaje o novonarodenom dieťati
-                            <button id="toggleNovorodenecBtn" class="btn btn-primary" style="float:right"><i id="novorodenecToggleBtnIcon" class="fa fa-angle-up fa-lg"></i></button>
+                        <h3>Údaje o novonarodenom dieťati
+                            <button id="toggleBabyBtn" class="btn btn-primary" style="float:right"><i id="toggleBabyBtnIcon" class="fa fa-angle-up fa-lg"></i></button>
                         </h3>
-                        <form id="novorodenecForm" class="form-horizontal" role="form">
+                        <form id="babyFrom" class="form-horizontal" role="form">
+							<br>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Meno</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Meno</label>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-lg-9">
                                     <p class="form-control-static">Alah</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Priezvisko</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Priezvisko</label>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-lg-9">
                                     <p class="form-control-static">Mocný</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Pohlavie</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Pohlavie</label>
                                 </div>
-                                <div class="col-sm-9">
-                                    <div class="radio">
-                                        <label class="radio-inline">
-                                        <input type="radio" checked="checked" disabled="disabled">Chlapec</label>
-                                        <label class="radio-inline">
-                                        <input type="radio" disabled="disabled">Dievča</label>
-                                    </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Chlapec</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Rodné číslo</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Rodné číslo</label>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-lg-9">
                                     <p class="form-control-static">945811/1111</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Dátum narodenia</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Dátum narodenia</label>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-lg-9">
                                     <p class="form-control-static">11.08.1994</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Miesto narodenia</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Miesto narodenia</label>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-lg-9">
                                     <p class="form-control-static">Trnava</p>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label class="control-label">Štátna príslušnosť</label>
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Štátna príslušnosť</label>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-lg-9">
                                     <p class="form-control-static">slovenská</p>
                                 </div>
                             </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Ulica</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Strmá</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">Mesto</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">Bratislava</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">15</p>
+                                                </div>
+                                            </div>
+											<div class="form-group">
+                                                <div class="col-lg-2">
+                                                    <label class="control-label label-left">PSČ</label>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <p class="form-control-static">99999</p>
+                                                </div>
+                                            </div>                                     
                         </form>
                         <hr>
-                        <h3 class="sansserif">Údaje o skôr narodených deťoch
+                        <h3>Údaje o skôr narodených deťoch
                             <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
                         </h3>
                         <hr>
-                        <h3 class="sansserif">Platobné informácie - dávky
+                        <h3>Platobné informácie - dávky
                             <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
                         </h3>
                         <hr>
-                        <h3 class="sansserif">Doplňujúce informácie - dávky
+                        <h3>Doplňujúce informácie - dávky
                             <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
                         </h3>
                         <hr>
@@ -190,7 +432,7 @@
         <footer class="section section-primary">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 text-center">
+                    <div class="col-lg-12 text-center">
                         <label>Drím tím ® 2015</label>
                     </div>
                 </div>
@@ -239,13 +481,35 @@
         </div>
       </div>
     </div>
-	<script id="toggleNForm">
-		$("#toggleNovorodenecBtn").click(function(event){
-			$("#novorodenecForm").slideToggle("fast");
-			if (document.getElementById("novorodenecToggleBtnIcon").className == "fa fa-angle-up fa-lg") {
-				document.getElementById("novorodenecToggleBtnIcon").className = "fa fa-angle-down fa-lg";
+	<script id="toggleMotherForm">
+		$("#toggleMotherBtn").click(function(event){
+			$("#motherFrom").slideToggle("fast");
+			if (document.getElementById("toggleMotherBtnIcon").className == "fa fa-angle-up fa-lg") {
+				document.getElementById("toggleMotherBtnIcon").className = "fa fa-angle-down fa-lg";
 			} else {
-				document.getElementById("novorodenecToggleBtnIcon").className = "fa fa-angle-up fa-lg";
+				document.getElementById("toggleMotherBtnIcon").className = "fa fa-angle-up fa-lg";
+			}
+
+		});
+    </script>
+	<script id="toggleBabyForm">
+		$("#toggleFatherBtn").click(function(event){
+			$("#fatherFrom").slideToggle("fast");
+			if (document.getElementById("toggleFatherBtnIcon").className == "fa fa-angle-up fa-lg") {
+				document.getElementById("toggleFatherBtnIcon").className = "fa fa-angle-down fa-lg";
+			} else {
+				document.getElementById("toggleFatherBtnIcon").className = "fa fa-angle-up fa-lg";
+			}
+
+		});
+    </script>
+	<script id="toggleBabyForm">
+		$("#toggleBabyBtn").click(function(event){
+			$("#babyFrom").slideToggle("fast");
+			if (document.getElementById("toggleBabyBtnIcon").className == "fa fa-angle-up fa-lg") {
+				document.getElementById("toggleBabyBtnIcon").className = "fa fa-angle-down fa-lg";
+			} else {
+				document.getElementById("toggleBabyBtnIcon").className = "fa fa-angle-up fa-lg";
 			}
 
 		});
