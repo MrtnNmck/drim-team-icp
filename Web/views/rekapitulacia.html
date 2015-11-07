@@ -91,9 +91,11 @@
                         </h2>
                         <br>
                         <h3>Osobné údaje - matka
-                            <button id="toggleMotherBtn" class="btn btn-primary" style="float:right"><i id="toggleMotherBtnIcon" class="fa fa-angle-up fa-lg"></i></button>
+                            <button id="toggleMotherBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm(motherForm, 'toggleMotherBtnIcon')">
+								<i id="toggleMotherBtnIcon" class="fa fa-angle-up fa-lg"></i>
+							</button>
                         </h3>
-										<form class="form-horizontal" role="form" id="motherFrom">
+										<form class="form-horizontal" role="form" id="motherForm">
 											<br>
 											<div class="form-group">
                                                 <div class="col-lg-2">
@@ -203,9 +205,11 @@
                                         </form>
                         <hr>
                         <h3>Osobné údaje - otec
-                            <button id="toggleFatherBtn" class="btn btn-primary" style="float:right"><i id="toggleFatherIcon" class="fa fa-angle-up fa-lg"></i></button>
+                            <button id="toggleFatherBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm(fatherForm, 'toggleFatherBtnIcon')">
+								<i id="toggleFatherBtnIcon" class="fa fa-angle-up fa-lg"></i>
+							</button>
                         </h3>
-										<form class="form-horizontal" role="form" id="fatherFrom">
+										<form class="form-horizontal" role="form" id="fatherForm">
 											<br>
 											<div class="form-group">
                                                 <div class="col-lg-2">
@@ -315,9 +319,11 @@
                                         </form>
                         <hr>
                         <h3>Údaje o novonarodenom dieťati
-                            <button id="toggleBabyBtn" class="btn btn-primary" style="float:right"><i id="toggleBabyBtnIcon" class="fa fa-angle-up fa-lg"></i></button>
+                            <button id="toggleBabyBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm(babyForm, 'toggleBabyBtnIcon')">
+								<i id="toggleBabyBtnIcon" class="fa fa-angle-up fa-lg"></i>
+							</button>
                         </h3>
-                        <form id="babyFrom" class="form-horizontal" role="form">
+                        <form id="babyForm" class="form-horizontal" role="form">
 							<br>
                             <div class="form-group">
                                 <div class="col-lg-2">
@@ -410,17 +416,341 @@
                         </form>
                         <hr>
                         <h3>Údaje o skôr narodených deťoch
-                            <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
+                            <button id="toggleChildrenBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm(childrenForms, 'toggleChildrenBtnIcon');">
+								<i id="toggleChildrenBtnIcon" class="fa fa-angle-up fa-lg"></i>
+							</button>
                         </h3>
+						<div id="childrenForms">
+						<form id="childrenForm1" class="form-horizontal" role="form">
+							<br>
+							<h3><p class="sansserif">Dieta c. 1</p></h3>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Meno</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Alah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Priezvisko</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Dátum narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Miesto narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Rodné císlo</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+						</form>
+						<form id="childrenForm2" class="form-horizontal" role="form">
+							<br>
+							<h3><p class="sansserif">Dieta c. 2</p></h3>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Meno</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Alah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Priezvisko</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Dátum narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Miesto narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Rodné císlo</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+						</form>
+						<form id="childrenForm3" class="form-horizontal" role="form">
+							<br>
+							<h3><p class="sansserif">Dieta c. 3</p></h3>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Meno</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Alah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Priezvisko</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Dátum narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Miesto narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Rodné císlo</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+						</form>
+						<form id="childrenForm4" class="form-horizontal" role="form">
+							<br>
+							<h3><p class="sansserif">Dieta c. 4</p></h3>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Meno</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Alah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Priezvisko</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Dátum narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Miesto narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Rodné císlo</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+						</form>
+						<form id="childrenForm5" class="form-horizontal" role="form">
+							<br>
+							<h3><p class="sansserif">Dieta c. 5</p></h3>
+                            <div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Meno</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Alah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Priezvisko</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Dátum narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Miesto narodenia</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+							<div class="form-group">
+                                <div class="col-lg-2">
+                                    <label class="control-label label-left">Rodné císlo</label>
+                                </div>
+                                <div class="col-lg-9">
+                                    <p class="form-control-static">Falah</p>
+                                </div>								
+                            </div>
+						</form>
+						</div>
                         <hr>
-                        <h3>Platobné informácie - dávky
-                            <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
+                        <h3>Platobné informácie
+                            <button id="togglePaymentBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm(paymentForms, 'togglePaymentBtnIcon')"><i id="togglePaymentBtnIcon" class="fa fa-angle-up fa-lg"></i></button>
                         </h3>
-                        <hr>
-                        <h3>Doplňujúce informácie - dávky
-                            <a class="btn btn-primary" style="float:right"><i class="fa fa-angle-down fa-lg"></i></a>
-                        </h3>
-                        <hr>
+						<div id="paymentForms">
+							<form id="homeAccountForm" class="form-horizontal" role="form">
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Spôsob platby</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static">Platba na domáci úcet</p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">IBAN</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static">654654654</p>
+									</div>								
+								</div>
+							</form>
+							<form id="foreignAccountForm" class="form-horizontal" role="form">
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Spôsob platby</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static">Platba na zahranicný úcet</p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Názov banky</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static">Banka</p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Majitel úctu</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static">Majitel</p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">IBAN</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static"></p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">SWIFT</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static"></p>
+									</div>								
+								</div>
+							</form>
+							<form id="cashAddressForm" class="form-horizontal" role="form">
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Spôsob platby</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static">Vyplatenie v hotovosti na adresu</p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Ulica</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static"></p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Císlo</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static"></p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">Mesto</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static"></p>
+									</div>								
+								</div>
+								<div class="form-group">
+									<div class="col-lg-2">
+										<label class="control-label label-left">PSC</label>
+									</div>
+									<div class="col-lg-9">
+										<p class="form-control-static"></p>
+									</div>								
+								</div>
+							</form>
+						</div>
+                        <hr>                      
                         <br>
                         <div class="col-md-12">
                             <button class="btn btn-primary pull-left"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></button>
@@ -465,10 +795,8 @@
           </div>
           <div class="modal-footer">
             <div class="text-center">
-              <button type="submit" class="btn btn-danger" data-dismiss="modal">
-                <i class="fa fa-times"></i>Nie</button>
-              <button type="submit" class="btn btn-success" data-dismiss="modal">
-                <i class="fa fa-check"></i>Áno</button>
+              <button type="submit" class="btn btn-danger" data-dismiss="modal">Nie</button>
+              <button type="submit" class="btn btn-success" data-dismiss="modal">Áno</button>
             </div>
           </div>
         </div>
@@ -491,50 +819,17 @@
         </div>
       </div>
     </div>
-	<script id="toggleMotherForm">
-		$("#toggleMotherBtn").click(function(event){
-			$("#motherFrom").slideToggle("fast");
-			if (document.getElementById("toggleMotherBtnIcon").className == "fa fa-angle-up fa-lg") {
-				document.getElementById("toggleMotherBtnIcon").className = "fa fa-angle-down fa-lg";
-			} else {
-				document.getElementById("toggleMotherBtnIcon").className = "fa fa-angle-up fa-lg";
-			}
-
-		});
-    </script>
-	<script id="toggleBabyForm">
-		$("#toggleFatherBtn").click(function(event){
-			$("#fatherFrom").slideToggle("fast");
-			if (document.getElementById("toggleFatherBtnIcon").className == "fa fa-angle-up fa-lg") {
-				document.getElementById("toggleFatherBtnIcon").className = "fa fa-angle-down fa-lg";
-			} else {
-				document.getElementById("toggleFatherBtnIcon").className = "fa fa-angle-up fa-lg";
-			}
-
-		});
-    </script>
-	<script id="toggleBabyForm">
-		$("#toggleBabyBtn").click(function(event){
-			$("#babyFrom").slideToggle("fast");
-			if (document.getElementById("toggleBabyBtnIcon").className == "fa fa-angle-up fa-lg") {
-				document.getElementById("toggleBabyBtnIcon").className = "fa fa-angle-down fa-lg";
-			} else {
-				document.getElementById("toggleBabyBtnIcon").className = "fa fa-angle-up fa-lg";
-			}
-
-		});
-    </script>
+	
+<!--temporary for modal views-->
 	<script id="validToOne">
 		$('#validOne').on('click', function () {
 			validationStatus = 1;
 		})
-	</script>
-	<script id="validToZero">
+
 		$('#validZero').on('click', function () {
 			validationStatus = 0;
 		})
-	</script>
-    <script id="modalChooser">
+
 		$('#confirm').on('click', function () {
 			if (validationStatus == 0) {
 				$('#modalDanger').modal('show')

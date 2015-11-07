@@ -70,3 +70,12 @@ $( document ).ready(function() {
 
     });
 });
+
+function myToggleForm(form, btnIcon) {
+	$(form).slideToggle("fast");
+	if (document.getElementById(btnIcon).className == "fa fa-angle-up fa-lg") {
+		document.getElementById(btnIcon).className = "fa fa-angle-down fa-lg";
+	} else {
+		document.getElementById(btnIcon).className = "fa fa-angle-up fa-lg";
+	}
+};
