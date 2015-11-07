@@ -7,7 +7,8 @@ function serializeForm(formId) {
         var obj = {
             id : input.id,
             value : $(this).is(":radio") ? $(this).is(":checked") : input.value,
-            required : $(this).parents("div:eq(1)").hasClass("required")
+            required : $(this).parents("div:eq(1)").hasClass("required"),
+            visible : $(this).is(":visible")
         };
 
         formArray.push(obj);

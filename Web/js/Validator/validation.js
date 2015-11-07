@@ -100,8 +100,35 @@ $( document ).ready(function() {
         }
     });
 
+    $('#confirmButton').on('click', function () {
+        if (!allRequiredInputsAreFilled()) {
+            $('#modalDanger').modal('show');
+        } else {
+            $('#modalSuccess').modal('show');
+        }
+    });
+
 });
 
 function getCurrentFileName() {
     return document.location.pathname.match(/[^\/]+$/)[0];
+}
+
+function allRequiredInputsAreFilled() {
+
+    for (var obj in localStorage) {
+        if (/^form\.*/.test(obj)) {
+            var formInputs = JSON.parse(localStorage.getItem(obj));
+
+            for (var indx in formInputs) {
+                var input = formInputs[indx];
+                
+                if (input.visible && input.required && (input.value === "" || input.value === null)) {
+                    return false;
+                }
+            }
+        }
+    }
+
+    return true;
 }
