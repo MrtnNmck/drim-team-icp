@@ -8,6 +8,7 @@ $( document ).ready(function() {
     $( "#child5" ).hide();
     $( "#cash" ).hide();
     $( "#foreign" ).hide();
+	$( "#form-porucnik-info" ).hide();
 
 
 
@@ -70,6 +71,23 @@ $( document ).ready(function() {
 
 
     });
+	
+	$( "#porucnik" ).click(function() {
+        if ($("#porucnik").is(":checked")) {
+			$("#form-porucnik-info").show();
+		} else {
+			$("#form-porucnik-info").hide();
+		}
+    });
+	
+	$( "#neznamyOtec" ).click(function() {
+        if ($("#neznamyOtec").is(":checked")) {
+			$("#form-otec-info").hide();
+		} else {
+			$("#form-otec-info").show();
+		}
+    });
+	
 });
 
 function myToggleForm(form, btnIcon) {

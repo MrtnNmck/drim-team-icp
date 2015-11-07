@@ -76,8 +76,8 @@
                                             <h2>Postup</h2>
                                             <div class="list-group" id="progress-bar">
                                                 <a href="formular_matka.html" class="list-group-item">1. Matka</span></a>
-                                                <a href="formular_otec.html" class="list-group-item active">2. Otec</a>
-                                                <a href="formular_porucnik.html" class="list-group-item">3. Poručník</a>
+                                                <a href="formular_otec.html" class="list-group-item">2. Otec</a>
+												<a href="formular_porucnik.html" class="list-group-item active">3. Poručník</a>
                                                 <a href="formular_novorodenec.html" class="list-group-item">4. Novorodenec</a>
                                                 <a href="formular_deti.html" class="list-group-item">5. Deti</a>
                                                 <a href="formular_platba.html" class="list-group-item">6. Platobné informácie</a>
@@ -86,7 +86,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-9">
-                                        <h2><p class="sansserif" id="formStart">Osobné údaje otca</p></h2>
+                                        <h2><p class="sansserif" id="formStart">Osobné údaje poručníka</p></h2>
                                         <hr>
                                         <h3><p class="sansserif">Stručné info</p></h3>
                                         <p>Údaje, ktoré sa chystáte vyplniť sú potrebné pre
@@ -99,14 +99,14 @@
 										<form class="form-horizontal">
 											<div class="form-group">
                                                 <div class="col-lg-3">
-                                                    <label class="control-label">Otec je neznámy</label>
+                                                    <label class="control-label">Dieťa potrebuje poručníka</label>
                                                 </div>
                                                 <div class="col-lg-8 checkbox" style="padding-left:4%">
-													<input type="checkbox" value="" id="neznamyOtec">
+													<input type="checkbox" value="" id="porucnik">
                                                 </div>
                                             </div>
 										</form>
-                                        <form class="form-horizontal" role="form" id="form-otec-info">
+                                        <form class="form-horizontal" role="form" id="form-porucnik-info">											
 											<div class="form-group">
                                                 <div class="col-lg-3">
                                                     <label class="control-label">Titul</label>
@@ -230,11 +230,11 @@
                                                 </div>
                                             </div>
                                         </form>
-										<hr>
-										<br>										
+											<hr>
+											<br>										
                                         <div class="col-md-12">
-                                            <a href="formular_matka.html" class="btn btn-primary"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></a>
-                                            <a href="formular_porucnik.html" class="btn btn-primary" style="float:right" id="nextButton" data-submit="form-otec-info"><strong>Pokračovať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
+                                            <a href="formular_otec.html" class="btn btn-primary"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></a>
+                                            <a href="formular_novorodenec.html" class="btn btn-primary" style="float:right" id="nextButton" data-submit="form-porucnik-info"><strong>Pokračovať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
                                         </div>
                                     </div>
                                 </div>
