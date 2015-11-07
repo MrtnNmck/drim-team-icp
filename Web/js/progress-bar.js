@@ -8,7 +8,7 @@ $(document).ready(function() {
         span.innerText = value + " %";
 
         return span;
-    };
+    }
 
     function getProgressBarBadgeColor(value) {
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
         } else {
             return "progress-bar-default";
         }
-    };
+    }
 
     function initProgressBar() {
 
@@ -33,8 +33,9 @@ $(document).ready(function() {
         var aInputsList = Array.prototype.slice.call(aInputs);
 
         aInputsList.forEach(function(progressBarPart) {
-            var isCookieSet = checkCookie("progress-bar." + progressBarPart.getAttribute("href"));
-            var value = isCookieSet ? getCookie("progress-bar." + progressBarPart.getAttribute("href")) : 0;
+
+            var progressBarValue = localStorage.getItem("progress-bar." + progressBarPart.getAttribute("href"));
+            var value = progressBarValue === null ? 0 : localStorage.getItem("progress-bar." + progressBarPart.getAttribute("href"));
             var badge = createProgressBarBadge(getProgressBarBadgeColor(value), value);
 
             progressBarPart.appendChild(badge);

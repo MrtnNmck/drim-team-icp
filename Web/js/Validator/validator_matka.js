@@ -63,9 +63,10 @@ $(document).ready(function() {
         });
 
         validationValue = Math.round(100 / inputCounter * validInputCounter);
-        //alert(Math.round(validationValue) + " %");
+        //createCookie("progress-bar." + getCurrentFileName(), validationValue, 1);
+        localStorage.setItem("progress-bar." + getCurrentFileName(), validationValue);
 
-        createCookie("progress-bar." + getCurrentFileName(), validationValue, 1);
+        serializeForm($("form")[0].id);
 
         if ($("#" + e.currentTarget.dataset.submit).valid()) {
             window.location.href = (e.currentTarget.href);

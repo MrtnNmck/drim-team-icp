@@ -1,5 +1,3 @@
-var inputsCount = 0;
-
 $( document ).ready(function() {
     // Characters with accent
     var accentedChars = "áäčéěďíĺľňôŕřšťúýž";
@@ -11,28 +9,28 @@ $( document ).ready(function() {
 
     $.validator.addMethod("emptyOrOnlyLetters", function(value, element) {
         var regex = new RegExp("^[a-zA-Z" + accentedChars + "]+$");
-        return this.optional(element) || value.length == 0 || regex.test(value);
+        return this.optional(element) || value.length === 0 || regex.test(value);
     }, "Vypĺňané pole môže obsahovať iba písmena.");
 
     $.validator.addMethod("emptyOrRodneCislo", function(value, element) {
-        return this.optional(element) || value.length == 0 || /^\d{6}\/\d{4}$/.test(value);
+        return this.optional(element) || value.length === 0 || /^\d{6}\/\d{4}$/.test(value);
     }, "Vypĺňané pole musí byť v tvare xxxxxx / xxxx.");
 
     $.validator.addMethod("emptyOrOnlyLettersAndNumbers", function(value, element) {
         var regex = new RegExp("^[A-Za-z" + accentedChars + "\\d]+$");
-        return this.optional(element) || value.length == 0 || regex.test(value);
+        return this.optional(element) || value.length === 0 || regex.test(value);
     }, "Vypĺňané pole môže obsahovať iba písmena a číslice.");
 
     $.validator.addMethod("emptyOrPhoneNumber", function(value, element) {
-        return this.optional(element) || value.length == 0 || /^\+?\d+\/?[\d\s]+$/.test(value);
+        return this.optional(element) || value.length === 0 || /^\+?\d+\/?[\d\s]+$/.test(value);
     }, "Vypĺňané pole musí obsahovať telefónne číslo.");
 
     $.validator.addMethod("emptyOrEmail", function(value, element) {
-        return this.optional(element) || value.length == 0 || /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/.test(value);
+        return this.optional(element) || value.length === 0 || /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/.test(value);
     }, "Vypĺňané pole musí obsahovať email.");
 
     $.validator.addMethod("emptyOrPsc", function(value, element) {
-        return this.optional(element) || value.length == 0 || /^\d{3}[/\s-]?\d{2}/.test(value);
+        return this.optional(element) || value.length === 0 || /^\d{3}[/\s-]?\d{2}/.test(value);
     }, "Vypĺňané pole musí obsahovať platné PSČ.");
 
     $.validator.setDefaults({
@@ -56,4 +54,4 @@ $( document ).ready(function() {
 
 function getCurrentFileName() {
     return document.location.pathname.match(/[^\/]+$/)[0];
-};
+}

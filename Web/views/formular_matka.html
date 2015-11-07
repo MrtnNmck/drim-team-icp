@@ -5,6 +5,7 @@
         <script type="text/javascript" src="../js/jQuery/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="../js/Bootstrap/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/Validator/jquery.validate.js"></script>
+        <script type="text/javascript" src="../js/LocalStorage/local-storage-manager.js"></script>
         <script type="text/javascript" src="../js/Validator/validation.js"></script>
         <script type="text/javascript" src="../js/Validator/validator_matka.js"></script>
         <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -96,7 +97,7 @@
                                                     <label class="control-label">Titul</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <input type="text" class="form-control" value="" placeholder="Titul" name="titul">
+                                                    <input type="text" class="form-control" value="" placeholder="Titul" id="titul" name="titul">
                                                 </div>
                                             </div>
                                             <div class="form-group required">
@@ -120,11 +121,11 @@
                                                     <label class="control-label">Rodinný stav</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <div class="radio" name="xx">
+                                                    <div class="radio">
                                                         <label class="radio-inline">
-                                                        <input type="radio" checked="checked">Slobodná</label>
+                                                            <input type="radio" id="slobodna" name="rodinnyStav" checked="checked">Slobodná</label>
                                                         <label class="radio-inline">
-                                                        <input type="radio">Vydatá</label>
+                                                            <input type="radio" id="vydata" name="rodinnyStav">Vydatá</label>
                                                     </div>
                                                 </div>
                                             </div>
