@@ -8,7 +8,7 @@ $( document ).ready(function() {
     $( "#child5" ).hide();
     $( "#cash" ).hide();
     $( "#foreign" ).hide();
-	$( "#form-porucnik-info" ).hide();
+	$( "#porucnikFormWrapper" ).hide();
 
 
 
@@ -64,30 +64,30 @@ $( document ).ready(function() {
         childrenCount -= 1;
         $( "#childrenCount" ).val(childrenCount);
 
-        if(childrenCount == 0)
+        if(childrenCount === 0)
             $("#minus-button").hide();
         if(childrenCount < 5)
             $("#plus-button").show();
 
 
     });
-	
+
 	$( "#porucnik" ).click(function() {
         if ($("#porucnik").is(":checked")) {
-			$("#form-porucnik-info").show();
+			$("#porucnikFormWrapper").show();
 		} else {
-			$("#form-porucnik-info").hide();
+			$("#porucnikFormWrapper").hide();
 		}
     });
-	
+
 	$( "#neznamyOtec" ).click(function() {
         if ($("#neznamyOtec").is(":checked")) {
-			$("#form-otec-info").hide();
+			$("#otecFormWrapper").hide();
 		} else {
-			$("#form-otec-info").show();
+			$("#otecFormWrapper").show();
 		}
     });
-	
+
 });
 
 function myToggleForm(form, btnIcon) {
@@ -97,4 +97,4 @@ function myToggleForm(form, btnIcon) {
 	} else {
 		document.getElementById(btnIcon).className = "fa fa-angle-up fa-lg";
 	}
-};
+}

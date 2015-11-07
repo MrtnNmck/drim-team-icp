@@ -7,7 +7,7 @@
         <script type="text/javascript" src="../js/Validator/jquery.validate.js"></script>
         <script type="text/javascript" src="../js/LocalStorage/local-storage-manager.js"></script>
         <script type="text/javascript" src="../js/Validator/validation.js"></script>
-        <script type="text/javascript" src="../js/Validator/validator_otec.js"></script>
+        <script type="text/javascript" src="../js/Validator/validator_porucnik.js"></script>
 		<script type="text/javascript" src="../js/hide-show.js"></script>
         <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="../css/layout_css.css" rel="stylesheet" type="text/css">
@@ -96,142 +96,144 @@
                                             viac detí, alebo ktorým sa v priebehu dvoch rokov opakovane narodili dvojčatá.</i>
                                         </p>
                                         <hr>
-										<form class="form-horizontal">
-											<div class="form-group">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Dieťa potrebuje poručníka</label>
-                                                </div>
-                                                <div class="col-lg-8 checkbox" style="padding-left:4%">
-													<input type="checkbox" value="" id="porucnik">
-                                                </div>
-                                            </div>
-										</form>
-                                        <form class="form-horizontal" role="form" id="form-porucnik-info">											
-											<div class="form-group">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Titul</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Titul" id="titul" name="titul">
-                                                </div>
-                                            </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Meno</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Meno" id="meno" name="meno">
-                                                </div>
-                                            </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Priezvisko</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Priezvisko" id="priezvisko" name="priezvisko">
-                                                </div>
-                                            </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Rodinný stav</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="radio">
-                                                        <label class="radio-inline">
-                                                        <input type="radio" checked="checked" name="rodinnyStav" id="slobodny">Slobodný</label>
-                                                        <label class="radio-inline">
-                                                        <input type="radio" name="rodinnyStav" id="zenaty">Ženatý</label>
+                                        <form class="form-horizontal" role="form" id="form-porucnik-info">
+                                            <div id="porucnikCheckBoxWrapper">
+                                                <div class="form-group">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Dieťa potrebuje poručníka</label>
+                                                    </div>
+                                                    <div class="col-lg-8 checkbox" style="padding-left:4%">
+    													<input type="checkbox" id="porucnik">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Rodné číslo</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Rodné číslo" id="rodneCislo" name="rodneCislo">
-                                                        <span class="input-group-addon">
-                                                        <i class="fa fa-question fa-lg"></i>
-                                                        </span>
+                                            <div id="porucnikFormWrapper">
+    											<div class="form-group">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Titul</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="Titul" id="titul" name="titul">
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label label-left">Číslo obč. preukazu</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Číslo občianskeho preukazu" id="cisloObcPreukaz" name="cisloObcPreukaz">
-                                                        <span class="input-group-addon">
-                                                        <i class="fa fa-question fa-lg"></i>
-                                                        </span>
+                                                <div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Meno</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="Meno" id="meno" name="meno">
                                                     </div>
                                                 </div>
-                                            </div>
-											<div class="form-group required">
-												<div class="col-lg-3">
-													<label for="name" class="control-label label-left">Štátna príslušnosť</label>
-												</div>
-												<div class="col-lg-8">
-													<input type="text" class="form-control" placeholder="Štátna príslušnosť" id="statnaPrislusnost" name="statnaPrislusnost">
-												</div>
-											</div>
+                                                <div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Priezvisko</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="Priezvisko" id="priezvisko" name="priezvisko">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Rodinný stav</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="radio">
+                                                            <label class="radio-inline">
+                                                            <input type="radio" checked="checked" name="rodinnyStav" id="slobodny">Slobodný</label>
+                                                            <label class="radio-inline">
+                                                            <input type="radio" name="rodinnyStav" id="zenaty">Ženatý</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Rodné číslo</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Rodné číslo" id="rodneCislo" name="rodneCislo">
+                                                            <span class="input-group-addon">
+                                                            <i class="fa fa-question fa-lg"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label label-left">Číslo obč. preukazu</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Číslo občianskeho preukazu" id="cisloObcPreukaz" name="cisloObcPreukaz">
+                                                            <span class="input-group-addon">
+                                                            <i class="fa fa-question fa-lg"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+    											<div class="form-group required">
+    												<div class="col-lg-3">
+    													<label for="name" class="control-label label-left">Štátna príslušnosť</label>
+    												</div>
+    												<div class="col-lg-8">
+    													<input type="text" class="form-control" placeholder="Štátna príslušnosť" id="statnaPrislusnost" name="statnaPrislusnost">
+    												</div>
+    											</div>
 
-											<div class="form-group">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Telefón</label>
+    											<div class="form-group">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Telefón</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="tel" class="form-control" placeholder="Telefón" id="telefon" name="telefon">
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-8">
-                                                    <input type="tel" class="form-control" placeholder="Telefón" id="telefon" name="telefon">
+    											<div class="form-group">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Email</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+                                                    </div>
                                                 </div>
-                                            </div>
-											<div class="form-group">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Email</label>
+    											<hr>
+    											<h3><p class="sansserif">Adresa</p></h3>
+    											<div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Ulica</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="Ulica" id="ulica" name="ulica">
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-8">
-                                                    <input type="email" class="form-control" placeholder="Email" id="email" name="email">
+    											<div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">Mesto</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="Mesto" id="mesto" name="mesto">
+                                                    </div>
                                                 </div>
-                                            </div>
-											<hr>
-											<h3><p class="sansserif">Adresa</p></h3>
-											<div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Ulica</label>
+    											<div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label label-left">Číslo domu/bytu</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="Číslo domu/bytu" id="cisloDomu" name="cisloDome">
+                                                    </div>
                                                 </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Ulica" id="ulica" name="ulica">
-                                                </div>
-                                            </div>
-											<div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">Mesto</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Mesto" id="mesto" name="mesto">
-                                                </div>
-                                            </div>
-											<div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label label-left">Číslo domu/bytu</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="Číslo domu/bytu" id="cisloDomu" name="cisloDome">
-                                                </div>
-                                            </div>
-											<div class="form-group required">
-                                                <div class="col-lg-3">
-                                                    <label class="control-label">PSČ</label>
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <input type="text" class="form-control" placeholder="PSČ" id="psc" name="psc">
+    											<div class="form-group required">
+                                                    <div class="col-lg-3">
+                                                        <label class="control-label">PSČ</label>
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" placeholder="PSČ" id="psc" name="psc">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </form>
 											<hr>
-											<br>										
+											<br>
                                         <div class="col-md-12">
                                             <a href="formular_otec.html" class="btn btn-primary"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></a>
                                             <a href="formular_novorodenec.html" class="btn btn-primary" style="float:right" id="nextButton" data-submit="form-porucnik-info"><strong>Pokračovať </strong><i class="fa fa-arrow-right fa-lg"></i></a>
