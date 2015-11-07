@@ -33,6 +33,14 @@ $( document ).ready(function() {
         return this.optional(element) || value.length === 0 || /^\d{3}[/\s-]?\d{2}/.test(value);
     }, "Vypĺňané pole musí obsahovať platné PSČ.");
 
+    $.validator.addMethod("emptyOrIBAN", function(value, element) {
+        return this.optional(element) || value.length === 0 || IBAN.isValid(value);
+    }, "Vypĺňané pole musí obsahovať platné IBAN číslo podľa špecifikácie pre danú krajinu.");
+
+    $.validator.addMethod("emptyOrSwift", function(value, element) {
+        return this.optional(element) || value.length === 0 || /[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?/i.test(value);
+    }, "Vypĺňané pole musí obsahovať validný Swift kód.");
+
     $.validator.setDefaults({
         highlight: function(element) {
             $(element).closest('.form-group').addClass('has-error');
@@ -50,6 +58,48 @@ $( document ).ready(function() {
             }
         }
     });
+
+    $("#nextButton").click(function(e) {
+        e.preventDefault();
+
+        var validationValue = 0;
+        var inputs = document.getElementsByTagName("input");
+        var inputsList = Array.prototype.slice.call(inputs);
+
+        var radioDiv = null;
+        var inputCounter = 0;
+        var validInputCounter = 0;
+
+        inputsList.forEach(function(element) {
+            if ($(element).is(":radio") && $(element).is(":visible")) {
+                if (!($(element).closest("div").is(radioDiv))) {
+                    radioDiv = $(element).closest("div");
+                    inputCounter++;
+                    validInputCounter++;
+                } else {
+                    return;
+                }
+            } else if ($(element).is(":visible")) {
+                if (element.value.length > 0 && $(element).valid()) {
+                    inputCounter++;
+                    validInputCounter++;
+                } else {
+                    inputCounter++;
+                }
+            }
+        });
+
+        validationValue = Math.round(100 / inputCounter * validInputCounter);
+
+        localStorage.setItem("progress-bar." + getCurrentFileName(), validationValue);
+
+        serializeForm($("form")[0].id);
+
+        if ($("#" + e.currentTarget.dataset.submit).valid()) {
+            window.location.href = (e.currentTarget.href);
+        }
+    });
+
 });
 
 function getCurrentFileName() {

@@ -20,6 +20,10 @@ $( document ).ready(function() {
         }
     });
 
+    if ($("#otherAddressRadio").is(":checked")) {
+        $("#newbornAddress").show();
+    }
+
     $( "input[name='paymentType']:radio" ).change(function() {
         var checkedValue = $( "input[name='paymentType']:radio" ).filter(':checked').val();
         console.log(checkedValue);

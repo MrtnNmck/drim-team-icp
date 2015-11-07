@@ -70,18 +70,21 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <h2>Postup</h2>
-                                        <div class="list-group" id="progress-bar">
-                                            <a href="formular_matka.html" class="list-group-item active">1. Matka</span></a>
-                                            <a href="formular_otec.html" class="list-group-item">2. Otec</a>
-                                            <a href="formular_novorodenec.html" class="list-group-item">3. Novorodenec</a>
-                                            <a href="formular_deti.html" class="list-group-item">4. Deti</a>
-                                            <a href="formular_platba.html" class="list-group-item">5. Platobné informácie</a>
-                                            <a href="rekapitulacia.html" class="list-group-item">6. Rekapitulácia</a>
+                                        <div id="stickyAnchor"></div>
+                                        <div id="progress-bar-div">
+                                            <h2>Postup</h2>
+                                            <div class="list-group" id="progress-bar">
+                                                <a href="formular_matka.html" class="list-group-item active">1. Matka</span></a>
+                                                <a href="formular_otec.html" class="list-group-item">2. Otec</a>
+                                                <a href="formular_novorodenec.html" class="list-group-item">3. Novorodenec</a>
+                                                <a href="formular_deti.html" class="list-group-item">4. Deti</a>
+                                                <a href="formular_platba.html" class="list-group-item">5. Platobné informácie</a>
+                                                <a href="rekapitulacia.html" class="list-group-item">6. Rekapitulácia</a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-9">
-                                        <h2><p class="sansserif">Osobné údaje matky</p></h2>
+                                        <h2><p class="sansserif" id="formStart">Osobné údaje matky</p></h2>
                                         <hr>
                                         <h3><p class="sansserif">Stručné info</p></h3>
                                         <p>Údaje, ktoré sa chystáte vyplniť sú potrebné pre
@@ -241,5 +244,6 @@
 
         <script type="text/javascript" src="../js/Cookies/cookie-manager.js"></script>
         <script type="text/javascript" src="../js/progress-bar.js"></script>
+        <script type="text/javascript" src="../js/events.js"></script>
     </body>
 </html>

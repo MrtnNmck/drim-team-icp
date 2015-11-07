@@ -1,10 +1,7 @@
 $(document).ready(function() {
 
-    $("#form-matka-info").validate({
+    $("#form-novorodenec-info").validate({
         rules: {
-            titul: {
-                emptyOrMaxFive: true
-            },
             meno: {
                 emptyOrOnlyLetters: true
             },
@@ -14,17 +11,8 @@ $(document).ready(function() {
             rodneCislo: {
                 emptyOrRodneCislo: true
             },
-            cisloObcPreukaz: {
-                emptyOrOnlyLettersAndNumbers: true
-            },
             statnaPrislusnost: {
                 emptyOrOnlyLetters: true
-            },
-            telefon: {
-                emptyOrPhoneNumber: true
-            },
-            email: {
-                emptyOrEmail: true
             },
             psc: {
                 emptyOrPsc: true

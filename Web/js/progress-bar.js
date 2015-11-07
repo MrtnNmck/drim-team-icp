@@ -33,9 +33,14 @@ $(document).ready(function() {
         var aInputsList = Array.prototype.slice.call(aInputs);
 
         aInputsList.forEach(function(progressBarPart) {
+            var href = progressBarPart.getAttribute("href");
 
-            var progressBarValue = localStorage.getItem("progress-bar." + progressBarPart.getAttribute("href"));
-            var value = progressBarValue === null ? 0 : localStorage.getItem("progress-bar." + progressBarPart.getAttribute("href"));
+            if (href === "rekapitulacia.html") {
+                return;
+            }
+
+            var progressBarValue = localStorage.getItem("progress-bar." + href);
+            var value = progressBarValue === null ? 0 : localStorage.getItem("progress-bar." + href);
             var badge = createProgressBarBadge(getProgressBarBadgeColor(value), value);
 
             progressBarPart.appendChild(badge);

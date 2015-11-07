@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $("#form-matka-info").validate({
+    $("#form-otec-info").validate({
         rules: {
             titul: {
                 emptyOrMaxFive: true
