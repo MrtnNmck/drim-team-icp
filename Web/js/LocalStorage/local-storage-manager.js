@@ -7,7 +7,7 @@ function serializeForm(formId) {
         var obj = {
             id : input.id,
             value : $(this).is(":radio") || $(this).is(":checkbox") ? $(this).is(":checked") : input.value,
-            info : $(this).is(":radio") || $(this).is(":checkbox") ? $(this).closest("label")[0].innerText : "",
+            info : $(this).is(":radio") ? $(this).closest("label")[0].innerText : "",
             required : $(this).parents("div:eq(1)").hasClass("required"),
             visible : $(this).is(":visible")
         };
