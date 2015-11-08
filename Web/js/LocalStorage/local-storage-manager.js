@@ -6,7 +6,7 @@ function serializeForm(formId) {
 
         var obj = {
             id : input.id,
-            value : $(this).is(":radio") ? $(this).is(":checked") : input.value,
+            value : $(this).is(":radio") || $(this).is(":checkbox") ? $(this).is(":checked") : input.value,
             required : $(this).parents("div:eq(1)").hasClass("required"),
             visible : $(this).is(":visible")
         };
@@ -29,7 +29,7 @@ function deserializeForm(formId) {
 
         var input = $("#" + obj.id);
 
-        if (input.is(":radio")) {
+        if (input.is(":radio") || input.is(":checkbox")) {
             input.prop("checked", obj.value);
         } else {
             input.val(obj.value);

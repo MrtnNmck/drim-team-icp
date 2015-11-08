@@ -72,6 +72,7 @@ $( document ).ready(function() {
 
     });
 
+
 	$( "#porucnik" ).click(function() {
         if ($("#porucnik").is(":checked")) {
 			$("#porucnikFormWrapper").show();
@@ -80,6 +81,10 @@ $( document ).ready(function() {
 		}
     });
 
+    if ($("#porucnik").is(":checked")) {
+        $("#porucnikFormWrapper").show();
+    }
+
 	$( "#neznamyOtec" ).click(function() {
         if ($("#neznamyOtec").is(":checked")) {
 			$("#otecFormWrapper").hide();
@@ -87,6 +92,10 @@ $( document ).ready(function() {
 			$("#otecFormWrapper").show();
 		}
     });
+
+    if ($("#neznamyOtec").is(":checked")) {
+        $("#otecFormWrapper").hide();
+    }
 
 });
 
