@@ -15,7 +15,7 @@ $(document).ready(function() {
                 emptyOrRodneCislo: true
             },
             cisloObcPreukaz: {
-                emptyOrOnlyLettersAndNumbers: true
+                emptyOrCisloObcianskeho: true
             },
             statnaPrislusnost: {
                 emptyOrOnlyLetters: true

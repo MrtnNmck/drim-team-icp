@@ -41,6 +41,10 @@ $( document ).ready(function() {
         return this.optional(element) || value.length === 0 || /[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?/i.test(value);
     }, "Vypĺňané pole musí obsahovať validný Swift kód.");
 
+    $.validator.addMethod("emptyOrCisloObcianskeho", function(value, element) {
+        return this.optional(element) || value.length === 0 || /^[A-Za-z]{2}[\d][6]$/.test(value);
+    }, "Vypĺňané pole musí obsahovať platné číslo občianského preukazu.");
+
     $.validator.setDefaults({
         highlight: function(element) {
             $(element).closest('.form-group').addClass('has-error');
@@ -122,7 +126,7 @@ function allRequiredInputsAreFilled() {
 
             for (var indx in formInputs) {
                 var input = formInputs[indx];
-                
+
                 if (input.visible && input.required && (input.value === "" || input.value === null)) {
                     return false;
                 }

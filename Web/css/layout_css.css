@@ -6827,4 +6827,12 @@ body {
    position:static;
 }
 
+.tooltip.right .tooltip-inner {
+  background-color: #2e6fa7;
+  border-color: #2e6fa7;
+}
+.tooltip.right .tooltip-arrow {
+  border-right-color: #2e6fa7;
+}
+
 /* PINGENDO COMMENT DO NOT REMOVE */
