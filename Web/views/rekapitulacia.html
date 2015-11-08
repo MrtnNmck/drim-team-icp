@@ -873,6 +873,33 @@
             </div>
         </footer>
 
+        <script>
+            $(document).ready(function() {
+
+                for (var obj in localStorage) {
+                    if (/^form\.*/.test(obj)) {
+                        var formInputs = JSON.parse(localStorage.getItem(obj));
+
+                        for (var indx in formInputs) {
+                            var input = formInputs[indx];
+
+                            if (input.info !== "") {
+                                if (typeof $("#" + obj).find("#" + input.id)[0] !== "undefined")
+                                    $("#" + obj).find("#" + input.id)[0].innerHTML = input.info;
+                            } else {
+                                $("#" + obj).find("#" + input.id)[0].innerHTML = input.value;
+                            }
+
+                            if (input.visible && input.required && (input.value === "" || input.value === null)) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+
+            });
+        </script>
+
         <script type="text/javascript" src="../js/progress-bar.js"></script>
         <script type="text/javascript" src="../js/events.js"></script>
     </body>
