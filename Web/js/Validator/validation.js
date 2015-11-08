@@ -42,7 +42,7 @@ $( document ).ready(function() {
     }, "Vypĺňané pole musí obsahovať validný Swift kód.");
 
     $.validator.addMethod("emptyOrCisloObcianskeho", function(value, element) {
-        return this.optional(element) || value.length === 0 || /^[A-Za-z]{2}[\d][6]$/.test(value);
+        return this.optional(element) || value.length === 0 || /^[A-Za-z]{2}\d{6}$/.test(value);
     }, "Vypĺňané pole musí obsahovať platné číslo občianského preukazu.");
 
     $.validator.setDefaults({
