@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     // Characters with accent
-    var accentedChars = "áäčéěďíĺľňôŕřšťúýž";
+    var accentedChars = "áäčéěďíĺľňôŕřšťúýžÁČÉĚĎÉÍĹĽŇŔŘŠŤÚÝŽ";
 
     // =============== CUSTOM RULES FOR VALIDATION ===============
     $.validator.addMethod("emptyOrMaxFive", function(value, element) {

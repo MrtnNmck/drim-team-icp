@@ -127,7 +127,8 @@
                                                     <label class="control-label label-left">Rodinný stav</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <p class="form-control-static">Vydatá</p>
+                                                    <p class="form-control-static" id="vydata">Vydatá</p>
+                                                    <p class="form-control-static" id="slobodna">Slobodná</p>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -241,7 +242,8 @@
                                                     <label class="control-label label-left">Rodinný stav</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <p class="form-control-static">Ženatý</p>
+                                                    <p class="form-control-static" id="zenaty">Ženatý</p>
+                                                    <p class="form-control-static" id="slobodny">Slobodný</p>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -355,7 +357,8 @@
                                                     <label class="control-label label-left">Rodinný stav</label>
                                                 </div>
                                                 <div class="col-lg-9">
-                                                    <p class="form-control-static">Ženatý</p>
+                                                    <p class="form-control-static" id="zenatyPorucnik">Ženatý</p>
+                                                    <p class="form-control-static" id="slobodnyPorucnik">Slobodný</p>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -461,7 +464,8 @@
                                     <label class="control-label label-left">Pohlavie</label>
                                 </div>
                                 <div class="col-lg-9">
-                                    <p class="form-control-static">Chlapec</p>
+                                    <p class="form-control-static" id="chlapec">Chlapec</p>
+                                    <p class="form-control-static" id="dievca">Dievča</p>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -876,6 +880,15 @@
         <script>
             $(document).ready(function() {
 
+                $("#vydata").hide();
+                $("#slobodna").hide();
+                $("#zenaty").hide();
+                $("#slobodny").hide();
+                $("#zenatyPorucnik").hide();
+                $("#slobodnyPorucnik").hide();
+                $("#dievca").hide();
+                $("#chlapec").hide();
+
                 for (var obj in localStorage) {
                     if (/^form\.*/.test(obj)) {
                         var formInputs = JSON.parse(localStorage.getItem(obj));
@@ -883,9 +896,11 @@
                         for (var indx in formInputs) {
                             var input = formInputs[indx];
 
-                            if (typeof $("#" + obj).find("#" + input.id)[0] !== "undefined") {
+                            if (input.id !== "" && typeof $("#" + obj).find("#" + input.id)[0] !== "undefined") {
                                 if (input.info !== "") {
-                                    $("#" + obj).find("#" + input.id)[0].innerHTML = input.info;
+                                    if (input.value === true) {
+                                        $("#" + obj).find("#" + input.id).show();
+                                    }
                                 } else {
                                     $("#" + obj).find("#" + input.id)[0].innerHTML = input.value;
                                 }
