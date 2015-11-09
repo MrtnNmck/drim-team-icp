@@ -883,15 +883,12 @@
                         for (var indx in formInputs) {
                             var input = formInputs[indx];
 
-                            if (input.info !== "") {
-                                if (typeof $("#" + obj).find("#" + input.id)[0] !== "undefined")
+                            if (typeof $("#" + obj).find("#" + input.id)[0] !== "undefined") {
+                                if (input.info !== "") {
                                     $("#" + obj).find("#" + input.id)[0].innerHTML = input.info;
-                            } else {
-                                $("#" + obj).find("#" + input.id)[0].innerHTML = input.value;
-                            }
-
-                            if (input.visible && input.required && (input.value === "" || input.value === null)) {
-                                return false;
+                                } else {
+                                    $("#" + obj).find("#" + input.id)[0].innerHTML = input.value;
+                                }
                             }
                         }
                     }
