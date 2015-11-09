@@ -9,7 +9,7 @@ $( document ).ready(function() {
     $( "#cash" ).hide();
     $( "#foreign" ).hide();
 	$( "#porucnikFormWrapper" ).hide();
-
+    $( "#continueButtonWrapper" ).hide();
 
 
     $( "input[name='newbornAddressRadio']:radio" ).change(function() {
@@ -95,6 +95,10 @@ $( document ).ready(function() {
 
     if ($("#neznamyOtec").is(":checked")) {
         $("#otecFormWrapper").hide();
+    }
+
+    if (localStorage.length !== 0) {
+        $("#continueButtonWrapper").show();
     }
 
 });
