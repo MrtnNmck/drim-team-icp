@@ -10,9 +10,16 @@ $(document).ready(function() {
         return span;
     }
 
-    function getProgressBarBadgeColor(value) {
+    function getProgressBarBadgeColor(value, allRequiredInputsAreFilled) {
 
-        if (value == 100) {
+        if (allRequiredInputsAreFilled)
+            return "progress-bar-success";
+        else if (!allRequiredInputsAreFilled && value > 0)
+            return "progress-bar-warning";
+        else
+            return "progress-bar-default";
+
+        /*if (value == 100) {
             return "progress-bar-success";
         } else if (value < 100 && value >= 60) {
             return "progress-bar-attention";
@@ -22,7 +29,7 @@ $(document).ready(function() {
             return "progress-bar-danger";
         } else {
             return "progress-bar-default";
-        }
+        }*/
     }
 
     function initProgressBar() {
@@ -41,7 +48,8 @@ $(document).ready(function() {
 
             var progressBarValue = localStorage.getItem("progress-bar." + href);
             var value = progressBarValue === null ? 0 : localStorage.getItem("progress-bar." + href);
-            var badge = createProgressBarBadge(getProgressBarBadgeColor(value), value);
+            var allRequiredInputsAreFilled = progressBarValue === null ? false : localStorage.getItem("progress-bar." + href + ".allRequiredInputsAreFilled");
+            var badge = createProgressBarBadge(getProgressBarBadgeColor(value, allRequiredInputsAreFilled), value);
 
             progressBarPart.appendChild(badge);
         });

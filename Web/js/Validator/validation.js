@@ -101,15 +101,23 @@ function allRequiredInputsAreFilled() {
 
     for (var obj in localStorage) {
         if (/^form\.*/.test(obj)) {
-            var formInputs = JSON.parse(localStorage.getItem(obj));
-
-            for (var indx in formInputs) {
-                var input = formInputs[indx];
-
-                if (input.visible && input.required && (input.value === "" || input.value === null)) {
-                    return false;
-                }
+            if (!allRequiredInputsAreFilled(obj)) {
+                return false;
             }
+        }
+    }
+
+    return true;
+}
+
+function allRequiredInputsAreFilled(formName) {
+    var formInputs = JSON.parse(localStorage.getItem(formName));
+
+    for (var indx in formInputs) {
+        var input = formInputs[indx];
+
+        if (input.visible && input.required && (input.value === "" || input.value === null)) {
+            return false;
         }
     }
 
@@ -145,9 +153,11 @@ function validateAllInputs() {
         }
     });
 
-    validationValue = Math.round(100 / inputCounter * validInputCounter);
+    validationValue = inputCounter === 0 && validInputCounter === 0 ? 100 : Math.round(100 / inputCounter * validInputCounter);
 
     localStorage.setItem("progress-bar." + getCurrentFileName(), validationValue);
+    localStorage.setItem("progress-bar." + getCurrentFileName() + ".allRequiredInputsAreFilled",
+        inputCounter === 0 && validInputCounter === 0 ? true : allRequiredInputsAreFilled($("form")[0].id));
 
     serializeForm($("form")[0].id);
 
