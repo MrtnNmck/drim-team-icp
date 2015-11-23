@@ -1,0 +1,116 @@
+<html><head style="font-family: Helvetica">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../js/jQuery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/Bootstrap/bootstrap.min.js"></script>
+    <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/layout_css.css" rel="stylesheet" type="text/css">
+    <title>Koniec</title>
+    <style>
+      p.serif {
+                    font-family: "Times New Roman", Times, serif;
+                    }
+                    p.sansserif {
+                    font-family: Arial, Helvetica, sans-serif;
+                    }
+    </style>
+  </head><body style="font-family: Helvetica">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-11">
+            <img class="img-responsive" src="..\img\bitmap.png">
+          </div>
+          <div class="col-md-1">
+            <div class="list-group">
+              <a href="#" class="list-group-item"><img src="..\img\slovakia.jpg" width="35px"></a>
+              <a href="#" class="list-group-item"><img src="..\img\england.jpg" width="35px"></a>
+              <a href="#" class="list-group-item"><img src="..\img\germany.jpg" width="35px"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="lead nav navbar-left navbar-nav">
+            <li>
+              <a href="index.html">Domov</a>
+            </li>
+            <li>
+              <a href="faq.html">Často kladené otázky</a>
+            </li>
+            <li>
+              <a href="onas.html">O nás</a>
+            </li>
+            <li>
+              <a href="kontakt.html">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-success">
+              <header class="panel-heading">
+                <h4>
+                  <p class="sansserif">
+                    <font color="black">Vaše údaje boli úspešne uložené</font>
+                  </p>
+                </h4>
+              </header>
+              <div class="panel-body">
+                <font size="3">
+                  <p>Teraz máte na výber dve možnosti: môžete vyplnené formuláre odoslať na
+                    úrady cez náš portál, alebo si môžete vyplnené formuláre vytlačiť a odniesť
+                    ich na úrady.</p>
+                </font>
+                <button id="sendBtn" class="btn btn-primary" onclick="$('#modalSend').modal('show'); ">Odoslať formuláre</button>
+                <a class="btn btn-primary">Vytlačiť formuláre</a>
+              </div>
+              <font size="2"></font>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <font size="2">
+      <footer class="section section-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <label>Drím tím ® 2015</label>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </font>
+    <!-- Modal -->
+    <div id="modalSend" class="fade modal text-center" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Formuláre boli odoslané príslušným úradom.
+              <br>Ďakujeme, že ste využili náš portál.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
