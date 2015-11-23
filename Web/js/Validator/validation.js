@@ -99,18 +99,24 @@ function getCurrentFileName() {
 
 function allRequiredInputsAreFilled() {
 
+    var counter = 0;
     for (var obj in localStorage) {
         if (/^form\.*/.test(obj)) {
-            if (!allRequiredInputsAreFilled(obj)) {
+            counter++;
+
+            if (!allRequiredInputsAreFilledInternal(obj)) {
                 return false;
             }
         }
     }
 
-    return true;
+    if (counter != 6)
+        return false;
+    else
+        return true;
 }
 
-function allRequiredInputsAreFilled(formName) {
+function allRequiredInputsAreFilledInternal(formName) {
     var formInputs = JSON.parse(localStorage.getItem(formName));
 
     for (var indx in formInputs) {
@@ -157,7 +163,7 @@ function validateAllInputs() {
 
     localStorage.setItem("progress-bar." + getCurrentFileName(), validationValue);
     localStorage.setItem("progress-bar." + getCurrentFileName() + ".allRequiredInputsAreFilled",
-        inputCounter === 0 && validInputCounter === 0 ? true : allRequiredInputsAreFilled($("form")[0].id));
+        inputCounter === 0 && validInputCounter === 0 ? true : allRequiredInputsAreFilledInternal($("form")[0].id));
 
     serializeForm($("form")[0].id);
 
