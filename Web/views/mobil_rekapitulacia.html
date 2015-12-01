@@ -1,0 +1,963 @@
+<html><head style="font-family: Helvetica">
+    <basefont face="Arial, Helvetica, sans-serif">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      validationStatus = 0;
+    </script>
+    <script type="text/javascript" src="../js/jQuery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/Bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/Validator/jquery.validate.js"></script>
+    <script type="text/javascript" src="../js/LocalStorage/local-storage-manager.js"></script>
+    <script type="text/javascript" src="../js/Validator/validation.js"></script>
+    <script type="text/javascript" src="../js/hide-show.js"></script>
+    <link href="../css/Font-Awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/layout_css.css" rel="stylesheet" type="text/css">
+    <title>Rekapitulácia</title>
+    <style>
+      * {
+            font-family: Arial, Helvetica, sans-serif;
+            }
+    </style>
+  </head><body style="font-family: Helvetica">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-11">
+            <img class="img-responsive" src="..\img\bitmap.png">
+          </div>
+          <div class="col-md-1">
+            <div class="list-group">
+              <a href="#" class="list-group-item" style="width:33%; float:left"><img src="..\img\slovakia.jpg" width="35px"></a>
+              <a href="#" class="list-group-item" style="width:34%; float:left"><img src="..\img\england.jpg" width="35px"></a>
+              <a href="#" class="list-group-item" style="width:33%; float:left"><img src="..\img\germany.jpg" width="35px"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="lead nav navbar-left navbar-nav">
+            <li>
+              <a href="index.html">Domov</a>
+            </li>
+            <li>
+              <a href="faq.html">Často kladené otázky</a>
+            </li>
+            <li>
+              <a href="onas.html">O nás</a>
+            </li>
+            <li>
+              <a href="kontakt.html">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div id="stickyAnchor"></div>
+            <div id="progress-bar-div">
+              <h2>Postup</h2>
+              <div class="list-group" id="progress-bar">
+                <a href="formular_matka.html" class="list-group-item">1. Matka</a>
+                <a href="formular_otec.html" class="list-group-item">2. Otec</a>
+                <a href="formular_porucnik.html" class="list-group-item">3. Poručník</a>
+                <a href="formular_novorodenec.html" class="list-group-item">4. Novorodenec</a>
+                <a href="formular_deti.html" class="list-group-item">5. Deti</a>
+                <a href="formular_platba.html" class="list-group-item">6. Platobné informácie</a>
+                <a href="rekapitulacia.html" class="list-group-item active">7. Rekapitulácia</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <h2 id="formStart">
+              <p class="sansserif">Rekapitulácia</p>
+            </h2>
+            <br>
+            <h3>Osobné údaje matky
+              <button id="toggleMotherBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm('#form-matka-info', 'toggleMotherBtnIcon')">
+                <i id="toggleMotherBtnIcon" class="fa fa-angle-up fa-lg"></i>
+              </button>
+            </h3>
+            <form class="form-horizontal" role="form" id="form-matka-info">
+              <br>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Titul</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="titul"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Meno</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="meno"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Priezvisko</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="priezvisko"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodinný stav</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="vydata">Vydatá</p>
+                  <p class="form-control-static" id="slobodna">Slobodná</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodné číslo</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="rodneCislo"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo obč. preukazu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloObcPreukaz"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label for="name" class="control-label label-left label-left">Štátna príslušnosť</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="statnaPrislusnost"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Telefón</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="telefon"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Email</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="email"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Ulica</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="ulica"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Mesto</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="mesto"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloDomu"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">PSČ</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="psc"></p>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <h3>Osobné údaje otca
+              <button id="toggleFatherBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm('#form-otec-info', 'toggleFatherBtnIcon')">
+                <i id="toggleFatherBtnIcon" class="fa fa-angle-up fa-lg"></i>
+              </button>
+            </h3>
+            <form class="form-horizontal" role="form" id="form-otec-info">
+              <br>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Titul</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="titul"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Meno</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="meno"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Priezvisko</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="priezvisko"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodinný stav</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="zenaty">Ženatý</p>
+                  <p class="form-control-static" id="slobodny">Slobodný</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodné číslo</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="rodneCislo"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo obč. preukazu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloObcPreukaz"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label for="name" class="control-label label-left label-left">Štátna príslušnosť</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="statnaPrislusnost"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Telefón</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="telefon"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Email</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="email"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Ulica</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="ulica"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Mesto</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="mesto"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloDomu"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">PSČ</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="psc"></p>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <h3>Osobné údaje poručníka
+              <button id="togglePorucBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm('#form-porucnik-info', 'togglePorucBtnIcon')">
+                <i id="togglePorucBtnIcon" class="fa fa-angle-up fa-lg"></i>
+              </button>
+            </h3>
+            <form class="form-horizontal" role="form" id="form-porucnik-info">
+              <br>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Titul</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="titul"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Meno</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="meno"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Priezvisko</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="priezvisko"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodinný stav</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="zenatyPorucnik">Ženatý</p>
+                  <p class="form-control-static" id="slobodnyPorucnik">Slobodný</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodné číslo</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="rodneCislo"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo obč. preukazu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloObcPreukaz"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label for="name" class="control-label label-left label-left">Štátna príslušnosť</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="statnaPrislusnost"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Telefón</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="telefon"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Email</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="email"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Ulica</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="ulica"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Mesto</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="mesto"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloDomu"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">PSČ</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="psc"></p>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <h3>Údaje o novonarodenom dieťati
+              <button id="toggleBabyBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm('#form-novorodenec-info', 'toggleBabyBtnIcon')">
+                <i id="toggleBabyBtnIcon" class="fa fa-angle-up fa-lg"></i>
+              </button>
+            </h3>
+            <form id="form-novorodenec-info" class="form-horizontal" role="form">
+              <br>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Meno</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="meno"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Priezvisko</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="priezvisko"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Pohlavie</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="chlapec">Chlapec</p>
+                  <p class="form-control-static" id="dievca">Dievča</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Rodné číslo</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="rodneCislo"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Dátum narodenia</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="datumNarodenia"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Miesto narodenia</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="miestoNarodenia"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Štátna príslušnosť</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="statnaPrislusnost"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Ulica</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="ulica"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Mesto</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="mesto"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left label-left">Číslo domu/bytu</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="cisloDomu"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">PSČ</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="psc"></p>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <h3>Údaje o skôr narodených deťoch
+              <button id="toggleChildrenBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm('#form-deti-info', 'toggleChildrenBtnIcon');">
+                <i id="toggleChildrenBtnIcon" class="fa fa-angle-up fa-lg"></i>
+              </button>
+            </h3>
+            <form id="form-deti-info" class="form-horizontal" role="form">
+              <div id="child1">
+                <br>
+                <h3>
+                  <p class="sansserif">Dieta c. 1</p>
+                </h3>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Meno</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="meno1"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Priezvisko</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="priezvisko1"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Dátum narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="datumNarodenia1"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Miesto narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="miestoNarodenia1"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Rodné císlo</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="rodneCislo1"></p>
+                  </div>
+                </div>
+              </div>
+              <div id="child2">
+                <br>
+                <h3>
+                  <p class="sansserif">Dieta c. 2</p>
+                </h3>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Meno</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="meno2"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Priezvisko</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="priezvisko2"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Dátum narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="datumNarodenia2"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Miesto narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="miestoNarodenia2"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Rodné císlo</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="rodneCislo2"></p>
+                  </div>
+                </div>
+              </div>
+              <div id="child3">
+                <br>
+                <h3>
+                  <p class="sansserif">Dieta c. 3</p>
+                </h3>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Meno</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="meno3"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Priezvisko</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="priezvisko3"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Dátum narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="datumNarodenia3"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Miesto narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="miestoNarodenia3"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Rodné císlo</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="rodneCislo3"></p>
+                  </div>
+                </div>
+              </div>
+              <div id="child4">
+                <br>
+                <h3>
+                  <p class="sansserif">Dieta c. 4</p>
+                </h3>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Meno</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="meno4"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Priezvisko</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="priezvisko4"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Dátum narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="datumNarodenia4"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Miesto narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="miestoNarodenia4"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Rodné císlo</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="rodneCislo4"></p>
+                  </div>
+                </div>
+              </div>
+              <div id="child5">
+                <br>
+                <h3>
+                  <p class="sansserif">Dieta c. 5</p>
+                </h3>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Meno</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="meno5"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Priezvisko</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="priezvisko5"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Dátum narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="datumNarodenia5"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Miesto narodenia</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="miestoNarodenia5"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Rodné císlo</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="rodneCislo5"></p>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <h3>Platobné informácie
+              <button id="togglePaymentBtn" class="btn btn-primary" style="float:right" onclick="myToggleForm('#form-platba-info', 'togglePaymentBtnIcon')">
+                <i id="togglePaymentBtnIcon" class="fa fa-angle-up fa-lg"></i>
+              </button>
+            </h3>
+            <form class="form-horizontal" role="form" id="form-platba-info">
+              <div class="form-group">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">Spôsob platby</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static">Platba na domáci úcet</p>
+                </div>
+              </div>
+              <div class="form-group" id="homeland">
+                <div class="col-lg-2">
+                  <label class="control-label label-left">IBAN</label>
+                </div>
+                <div class="col-lg-9">
+                  <p class="form-control-static" id="iban"></p>
+                </div>
+              </div>
+              <div id="foreign">
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Názov banky</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="banka"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Majitel úctu</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="majtelUctu"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">IBAN</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="iban2"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">SWIFT</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="swift"></p>
+                  </div>
+                </div>
+              </div>
+              <div id="cash">
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Ulica</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="ulica"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Císlo</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="cislo"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">Mesto</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="mesto"></p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-2">
+                    <label class="control-label label-left">PSC</label>
+                  </div>
+                  <div class="col-lg-9">
+                    <p class="form-control-static" id="psc"></p>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <hr>
+            <br>
+            <div class="col-md-12">
+              <a href="formular_platba.html" class="btn-lg btn-primary pull-left"><i class="fa fa-arrow-left fa-lg"></i><strong> Späť</strong></a>
+              <button class="btn-lg btn-success pull-right" id="confirmButton">
+                <i class="fa fa-check fa-lg"></i>
+                <strong>Potvrdiť</strong>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <footer class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <label>Drím tím ® 2015</label>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function() {
+
+                $("#vydata").hide();
+                $("#slobodna").hide();
+                $("#zenaty").hide();
+                $("#slobodny").hide();
+                $("#zenatyPorucnik").hide();
+                $("#slobodnyPorucnik").hide();
+                $("#dievca").hide();
+                $("#chlapec").hide();
+
+                for (var obj in localStorage) {
+                    if (/^form\.*/.test(obj)) {
+                        var formInputs = JSON.parse(localStorage.getItem(obj));
+
+                        for (var indx in formInputs) {
+                            var input = formInputs[indx];
+
+                            if (input.id !== "" && typeof $("#" + obj).find("#" + input.id)[0] !== "undefined") {
+                                if (input.info !== "") {
+                                    if (input.value === true) {
+                                        $("#" + obj).find("#" + input.id).show();
+                                    }
+                                } else {
+                                    $("#" + obj).find("#" + input.id)[0].innerHTML = input.value;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            });
+    </script>
+    <script type="text/javascript" src="../js/progress-bar.js"></script>
+    <script type="text/javascript" src="../js/events.js"></script>
+    <!-- Modal -->
+    <div id="modalSuccess" class="fade modal text-center" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header section-primary">
+            <button type="button" class="close" data-dismiss="modal">
+              <i class="fa fa-times" style="color:white"></i>
+            </button>
+            <h4 class="modal-title">Potvrdenie</h4>
+          </div>
+          <div class="modal-body">
+            <p>Naozaj chcete potvrdiť zadané údaje?
+              <br>
+              <br>Potvrdením udelujete súhlas so spracovaním zadaných osobných údajov
+              <br>podľa zákona č. 428/2002 Z. z. o ochrane osobných údajov.</p>
+          </div>
+          <div class="modal-footer">
+            <div class="text-center">
+              <button class="btn btn-danger" data-dismiss="modal">Nie</button>
+              <a class="btn btn-success" href="koniec.html">Áno</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalDanger" class="fade modal text-center" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header section-danger">
+            <button type="button" class="close" data-dismiss="modal">
+              <i class="fa fa-times" style="color:white"></i>
+            </button>
+            <h4 class="modal-title">Potvrdenie</h4>
+          </div>
+          <div class="modal-body">
+            <p>Nevyplnili ste niektoré potrebné údaje.
+              <br>Vráťte sa a vyplňte ich prosím.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
